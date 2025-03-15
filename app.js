@@ -271,12 +271,19 @@ console.log(removeApples([`Banana`, `Orange`, `Apple`]))
 // filterOutFalsy([`Banana`, `Orange`, `Apple`])-->[`Banana`, `Orange`]
 // //-----------------------For Loop Solution--------------------------
 //------------------------------------------------------------------
-function filterOutFalsy(arr){
-  return arr.filter(elem => elem !== `Apple`)
+function filterOutFalsyItems(arr){
+  
 }
 
-console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]))
-console.log(filterOutFalsy([`Tomato`, `Orange`, `Banana`, false]))
-console.log(filterOutFalsy([`Banana`, `Orange`, `Apple`]))
+
+
+
 //----------------------Array `Filter Solution----------------------
 //------------------------------------------------------------------
+function filterOutFalsyItems(arr){
+  return arr.filter(elem => !!elem === true)
+}
+
+console.log(filterOutFalsyItems(["", [], 0, null, undefined, "0"]))
+console.log(filterOutFalsyItems([`Tomato`, `Orange`, `Banana`, false]))
+console.log(filterOutFalsyItems([`Banana`, `Orange`, `Apple`]))
