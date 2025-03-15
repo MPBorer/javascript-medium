@@ -272,18 +272,33 @@ console.log(removeApples([`Banana`, `Orange`, `Apple`]))
 // //-----------------------For Loop Solution--------------------------
 //------------------------------------------------------------------
 function filterOutFalsyItems(arr){
-  
+    let truthyarr = [];
+    for (let i = 0; i < arr.length; ++i){
+      if (!!arr[i] === true){
+        truthyarr.push(arr[i])
+      }
+    }
+    return truthyarr
 }
-
-
-
-
+console.log(filterOutFalsyItems(["", [], 0, null, undefined, "0"]))
+console.log(filterOutFalsyItems([`Tomato`, `Orange`, `Banana`, false]))
+console.log(filterOutFalsyItems([`Banana`, `Orange`, `Apple`]))
 //----------------------Array `Filter Solution----------------------
 //------------------------------------------------------------------
 function filterOutFalsyItems(arr){
   return arr.filter(elem => !!elem === true)
 }
-
 console.log(filterOutFalsyItems(["", [], 0, null, undefined, "0"]))
 console.log(filterOutFalsyItems([`Tomato`, `Orange`, `Banana`, false]))
 console.log(filterOutFalsyItems([`Banana`, `Orange`, `Apple`]))
+
+//---------------------------------------------------------------------------------------------------
+// Q12-Truthy to true amd Falsy to false. 
+// Given an array of truthy and flasy values, return the same array of elements to its boolean value. 
+
+// convertToBoolean([500, 0, "David", "", []])----->[true, false, true, false, true]
+
+function convertToBoolean(arr){
+ return arr.map(elem => !!elem)
+}
+console.log(convertToBoolean([500, 0, "David", "", []]))
